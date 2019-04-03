@@ -15,14 +15,10 @@ class ViewController: UIViewController {
         
         let account = "kerry"
         let password = "111122223333"
-        let keychainService = KeychainService()
-        keychainService.save(password, for: account)
+        KeychainService.shared.save(password, for: account)
         
-        let retrievePassword = keychainService.retrieve(for: account)
+        let retrievePassword = KeychainService.shared.retrieve(for: account)
         print(retrievePassword ?? "")
-        
     }
-
-
 }
 
